@@ -1,10 +1,10 @@
 import './App.css'
+import { Button } from '@mui/material'
 
 function App() {
-
   return (
     <>
-      Hello World!
+      <Button variant="contained">Hello world</Button>
     </>
   )
 }
