@@ -1,12 +1,12 @@
 import './App.css'
-import Login from './components/login'
+import SignIn from './components/SignIn/SignIn'
+import SignUp from './components/SignUp/SignUp'
 
 function App() {
   return (
-    <>
-      <Login />
-    </>
+    <div>
+      <SignUp></SignUp>
+    </div>
   )
 }
-
 export default App
