@@ -6,6 +6,7 @@ import './App.css'
 import SignUp from './components/Signup'
 import Login from './components/Login'
 import Dashboard from './components/Dashboard'
+import PrivateRoute from './components/PrivateRoute'
 
 function App() {
   return (
@@ -18,12 +19,13 @@ function App() {
           <Router>
             <AuthProvider>
               <Routes>
-                {/* <PrivateRoute exact path="/" component={Dashboard} /> */}
-                {/* <PrivateRoute path="/update-profile" component={UpdateProfile} /> */}
-                <Route exact path="/" element={<Dashboard />} />
+                <Route
+                  exact
+                  path="/"
+                  element={<PrivateRoute Component={Dashboard} />}
+                />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/login" element={<Login />} />
-                {/* <Route path="/forgot-password" component={ForgotPassword} /> */}
               </Routes>
             </AuthProvider>
           </Router>
