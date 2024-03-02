@@ -7,9 +7,8 @@ const Profile = () => {
   return (
     <>
       <NavBar />
-      <Container className='vh-100 d-flex'>
+      <Container className='vh-100'>
         <Sidebar />
-        <Project/>
       </Container>
     </>
   )

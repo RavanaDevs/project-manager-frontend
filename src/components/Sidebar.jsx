@@ -26,9 +26,6 @@ const Sidebar = () => {
         <Nav.Link as={Link} to="/" className="text-white">
           Home
         </Nav.Link>
-        <Nav.Link as={Link} to="/newproject" className="text-white">
-          New Project
-        </Nav.Link>
         <Nav.Link as={Link} to="/myprojects" className="text-white">
           My Projects
         </Nav.Link>

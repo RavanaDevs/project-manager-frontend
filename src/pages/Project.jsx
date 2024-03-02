@@ -3,16 +3,16 @@ import NavBar from "../components/Navbar"
 import Sidebar from "../components/Sidebar"
 import Project from "../components/Project"
 
-const Profile = () => {
+const ProjectPage = () => {
   return (
     <>
       <NavBar />
       <Container className='vh-100 d-flex'>
         <Sidebar />
-        <Project/>
+        <Project />
       </Container>
     </>
   )
 }
 
-export default Profile
+export default ProjectPage

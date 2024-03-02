@@ -8,6 +8,7 @@ import PrivateRoute from './components/PrivateRoute'
 
 import Dashboard from './pages/Dashboard'
 import Profile from './pages/Profile'
+import ProjectPage from './pages/Project'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/myprojects" element={<ProjectPage />} />
           </Routes>
         </AuthProvider>
       </Router>
