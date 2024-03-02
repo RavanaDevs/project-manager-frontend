@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   sendPasswordResetEmail,
+  onAuthStateChanged,
 } from 'firebase/auth'
 import { auth } from '../firebase'
 
@@ -15,7 +16,15 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user)
+      setLoading(false)
+    })
+    return unsubscribe
+  }, [currentUser])
 
   const signup = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password)
@@ -43,15 +52,6 @@ export const AuthProvider = ({ children }) => {
     throw Error('Not implimented')
   }
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setCurrentUser(user)
-      setLoading(false)
-    })
-
-    return unsubscribe
-  }, [])
-
   const value = {
     currentUser,
     login,
@@ -62,5 +62,9 @@ export const AuthProvider = ({ children }) => {
     updatePassword,
   }
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  )
 }
