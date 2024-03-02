@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css'
 import SignUp from './components/Signup'
 import Login from './components/Login'
-import Dashboard from './components/Dashboard'
 import PrivateRoute from './components/PrivateRoute'
+
+import Dashboard from './pages/Dashboard'
 
 function App() {
   return (
