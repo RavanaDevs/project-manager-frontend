@@ -14,21 +14,20 @@ const NavBar = () => {
   }
 
   return (
-    <Navbar bg="dark" data-bs-theme="dark">
+    <Navbar bg="dark" expand="lg" variant="dark">
       <Container>
         <Navbar.Brand href="/">PROJECT MANAGER</Navbar.Brand>
-        <Nav>
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="#link">NewProject</Nav.Link>
-          <Nav.Link href="#link">MyProjects</Nav.Link>
-          <Nav.Link href="#link">Todos</Nav.Link>
-        </Nav>
-        <Navbar.Collapse className="justify-content-end">
-          <Nav className="ml-auto">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="#newproject">NewProject</Nav.Link>
+            <Nav.Link href="#myprojects">MyProjects</Nav.Link>
+            <Nav.Link href="#todos">Todos</Nav.Link>
+          </Nav>
+          <Nav>
             <Navbar.Text>
-              <a className="mr-10" href="#login">
-                {currentUser.email}
-              </a>
+              <a href="#login">{currentUser ? currentUser.email : 'User'}</a>
             </Navbar.Text>
             <NavDropdown title={<FaUser />} id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
