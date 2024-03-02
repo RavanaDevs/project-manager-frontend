@@ -10,3 +10,19 @@
     font-size: xx-large;
     font-weight: bolder;
 }
+
+.project-container{
+    width: 100%;
+    height: 100%;
+    background-color: #303840;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+
+.green{
+    color:green;
+}
+.red{
+    color: red;
+}
